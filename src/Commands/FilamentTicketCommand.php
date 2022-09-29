@@ -1,12 +1,12 @@
 <?php
 
-namespace VendorName\Skeleton\Commands;
+namespace IchBin\FilamentTicket\Commands;
 
 use Illuminate\Console\Command;
 
-class SkeletonCommand extends Command
+class FilamentTicketCommand extends Command
 {
-    public $signature = 'skeleton';
+    public $signature = 'filament-ticket';
 
     public $description = 'My command';
 
