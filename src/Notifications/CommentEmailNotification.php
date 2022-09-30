@@ -47,7 +47,7 @@ class CommentEmailNotification extends Notification
             ->line('New comment on ticket ' . $this->comment->ticket->title . ':')
             ->line('')
             ->line(Str::limit($this->comment->comment_text, 500))
-            ->action('View full ticket', route(optional($notifiable)->id ? 'filament.resources.tickets.view' : 'tickets.show', $this->comment->ticket->id))
+            ->action('View full ticket', route(optional($notifiable)->id ? 'filament.resources.tickets.view' : 'filament.resources.tickets.view', $this->comment->ticket->id))
             ->line('Thank you')
             ->line(config('app.name') . ' Team')
             ->salutation(' ');

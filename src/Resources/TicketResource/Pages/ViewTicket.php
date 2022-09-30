@@ -16,4 +16,11 @@ class ViewTicket extends ViewRecord
             Actions\EditAction::make(),
         ];
     }
+
+    protected function getFooterWidgets(): array
+    {
+        return [
+            TicketResource\Widgets\TicketComments::class,
+        ];
+    }
 }

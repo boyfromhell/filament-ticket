@@ -110,4 +110,11 @@ class TicketResource extends Resource
                 SoftDeletingScope::class,
             ]);
     }
+
+    public static function getWidgets(): array
+    {
+        return [
+            TicketResource\Widgets\TicketComments::class,
+        ];
+    }
 }
