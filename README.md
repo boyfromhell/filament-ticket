@@ -1,8 +1,6 @@
 # This is a ticket system for filament admin panel
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/ichbin/filament-ticket.svg?style=flat-square)](https://packagist.org/packages/ichbin/filament-ticket)
-[![GitHub Tests Action Status](https://img.shields.io/github/workflow/status/ichbin/filament-ticket/run-tests?label=tests)](https://github.com/ichbin/filament-ticket/actions?query=workflow%3Arun-tests+branch%3Amain)
-[![GitHub Code Style Action Status](https://img.shields.io/github/workflow/status/ichbin/filament-ticket/Fix%20PHP%20code%20style%20issues?label=code%20style)](https://github.com/ichbin/filament-ticket/actions?query=workflow%3A"Fix+PHP+code+style+issues"+branch%3Amain)
 [![Total Downloads](https://img.shields.io/packagist/dt/ichbin/filament-ticket.svg?style=flat-square)](https://packagist.org/packages/ichbin/filament-ticket)
 
 This is a ticket system for filament admin panel
