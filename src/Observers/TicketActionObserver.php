@@ -12,7 +12,7 @@ class TicketActionObserver
     public function created(Ticket $model)
     {
         $data  = ['action' => 'New ticket has been created!', 'model_name' => 'Ticket', 'ticket' => $model];
-        $users = \App\Models\User::whereHas('roles', function ($q) {
+        $users = \config("filament-ticket.model")::whereHas('roles', function ($q) {
             return $q->where('name', 'Admin');
         })->get();
         Notification::send($users, new DataChangeEmailNotification($data));

@@ -32,6 +32,24 @@ This is the contents of the published config file:
 
 ```php
 return [
+    'resources' => [
+        TicketResource::class,
+        CategoryResource::class,
+        StatusResource::class,
+        PriorityResource::class,
+    ],
+    'models' => [
+        \App\Models\User::class,
+    ],
+    "navigation_group" => "Ticket System",
+    "ticket_label" => "Custom Fields",
+    "ticket_responses_label" => "Custom Fields Responses",
+    "category_label" => "Custom Fields",
+    "category_responses_label" => "Custom Fields Responses",
+    "status_label" => "Custom Fields",
+    "status_responses_label" => "Custom Fields Responses",
+    "priority_label" => "Custom Fields",
+    "priority_responses_label" => "Custom Fields Responses",
 ];
 ```
 

@@ -19,4 +19,11 @@ class EditTicket extends EditRecord
             Actions\RestoreAction::make(),
         ];
     }
+
+    protected function getFooterWidgets(): array
+    {
+        return [
+            TicketResource\Widgets\TicketComments::class,
+        ];
+    }
 }

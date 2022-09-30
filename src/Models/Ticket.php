@@ -81,7 +81,7 @@ class Ticket extends Model
 
     public function assigned_to_user()
     {
-        return $this->belongsTo(User::class, 'assigned_to_user_id');
+        return $this->belongsTo(config("filament-ticket.model"), 'assigned_to_user_id');
     }
 
     public function scopeFilterTickets($query)

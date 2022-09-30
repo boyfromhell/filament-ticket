@@ -12,9 +12,7 @@ return [
         StatusResource::class,
         PriorityResource::class,
     ],
-    'models' => [
-        \App\Models\User::class,
-    ],
+    'model' => App\Models\User::class,
     "navigation_group" => "Ticket System",
     "ticket_label" => "Custom Fields",
     "ticket_responses_label" => "Custom Fields Responses",
