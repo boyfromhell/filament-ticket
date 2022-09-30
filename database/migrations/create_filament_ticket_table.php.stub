@@ -8,12 +8,53 @@ return new class extends Migration
 {
     public function up()
     {
-        Schema::create('filament_ticket_table', function (Blueprint $table) {
+        Schema::create('ticket_statuses', function (Blueprint $table) {
             $table->id();
-
-            // add fields
-
+            $table->string('name');
+            $table->string('color')->nullable();
             $table->timestamps();
+            $table->softDeletes();
         });
+
+        Schema::create('ticket_priorities', function (Blueprint $table) {
+            $table->id();
+            $table->string('name');
+            $table->string('color')->nullable();
+            $table->timestamps();
+            $table->softDeletes();
+        });
+
+        Schema::create('ticket_categories', function (Blueprint $table) {
+            $table->id();
+            $table->string('name');
+            $table->string('color')->nullable();
+            $table->timestamps();
+            $table->softDeletes();
+        });
+
+        Schema::create('ticket_tickets', function (Blueprint $table) {
+            $table->id();
+            $table->foreignId('status_id')->references('id')->on('ticket_statuses');
+            $table->foreignId('priority_id')->references('id')->on('ticket_priorities');
+            $table->foreignId('category_id')->references('id')->on('ticket_categories');
+            $table->foreignId('assigned_to_user_id')->nullable()->references('id')->on('users');
+            $table->string('title');
+            $table->longText('content')->nullable();
+            $table->string('author_name')->nullable();
+            $table->string('author_email')->nullable();
+            $table->timestamps();
+            $table->softDeletes();
+        });
+
+            Schema::create('ticket_comments', function (Blueprint $table) {
+            $table->id();
+            $table->foreignId('user_id')->references('id')->on('users');
+            $table->foreignId('ticket_id')->references('id')->on('ticket_tickets');
+            $table->string('author_name')->nullable();
+            $table->string('author_email')->nullable();
+            $table->longText('comment_text');
+            $table->timestamps();
+            $table->softDeletes();
+            });
     }
 };

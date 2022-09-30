@@ -5,9 +5,16 @@ namespace IchBin\FilamentTicket;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
 use IchBin\FilamentTicket\Commands\FilamentTicketCommand;
+use Filament\PluginServiceProvider;
 
-class FilamentTicketServiceProvider extends PackageServiceProvider
+class FilamentTicketServiceProvider extends PluginServiceProvider
 {
+     protected function getResources(): array
+    {
+        return config("filament-ticket.resources", []);
+    }
+
+
     public function configurePackage(Package $package): void
     {
         /*
@@ -19,7 +26,9 @@ class FilamentTicketServiceProvider extends PackageServiceProvider
             ->name('filament-ticket')
             ->hasConfigFile()
             ->hasViews()
-            ->hasMigration('create_filament-ticket_table')
+            ->hasMigration('create_filament_ticket_table')
+            //->hasMigration('add_relationship_fields_to_filament_ticket_table')
+            //->hasMigration('add_relationship_fields_to_filament_ticket_comments_table')
             ->hasCommand(FilamentTicketCommand::class);
     }
 }
