@@ -75,7 +75,7 @@ Please review [our security policy](../../security/policy) on how to report secu
 
 ## Credits
 
-- [IchBin](https://github.com/IchBin)
+- [IchBin](https://www.gametracker.ro)
 - [All Contributors](../../contributors)
 
 ## License
